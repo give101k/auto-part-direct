@@ -83,7 +83,8 @@ function get_part_cat($crid)
   global $db;
   $query = 'SELECT DISTINCT HAS_PARTS.category
             FROM HAS_PARTS
-            WHERE HAS_PARTS.cr_id = :carid';
+            WHERE HAS_PARTS.cr_id = :carid
+            ORDER BY HAS_PARTS.category ASC';
   $statement = $db->prepare($query);
   $statement->bindValue(':carid', $crid);
   $statement->execute();

@@ -1,0 +1,39 @@
+.bar {
+  height: 100%;
+  position: fixed;
+  background-color: #898989;
+}
+.bar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+.bar a:hover {
+  color: #818181;
+}
+.order {
+  margin: 20px auto 0px;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 90%;
+  background-color: #898989;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+hr {
+  border: 0;
+  border-top: 1px solid white;
+}
+body {
+  padding-top: 56px;
+}
+
+#update {
+  margin-top: 15px;
+}
+
+#update input {
+  margin-top: 10px;
+}

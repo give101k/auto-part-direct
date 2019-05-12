@@ -1,0 +1,10 @@
+.reg {
+  max-width: 500px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #d3d3d3;
+  color: black;
+}
+.space {
+  margin: 10px auto;
+}

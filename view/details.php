@@ -2,12 +2,11 @@
 <html>
 
 <head>
-  <title>Auto Parts Direct</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EastCost Skate Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/products.css">
-  <script type="text/javascript" src="javascript/products.js"></script>
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/account.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,10 +28,10 @@
           <a class="nav-link" href="?action=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="?action=products">Products</a>
+          <a class="nav-link" href="?action=products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?action=account">My Account</a>
+          <a class="nav-link active" href="?action=account">My Account</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?action=reg">Register</a>
@@ -63,22 +62,50 @@
       </form>
     </div>
   </nav>
-  <main class="container">
-    <div class="card" id="crd">
-      <div class="list-group">
-        <?php foreach ($part_cat as $cat): ?>
-        <a href="?action=display&cat=<?php echo $cat[
-          'category'
-        ]; ?>&carid=<?php echo $carid[0][
-  'car_id'
-]; ?>" class="list-group-item list-group-item-action"><?php echo $cat[
-  'category'
-]; ?>
-        </a>
+  <div class="container-fluid">
+    <div class="row order">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col">
+            Order Date:
+            <?php
+            $date = new DateTime($order[0]['date']);
+            echo $date->format('h:i a T m-d-Y');
+            ?>
+            <br>
+            Order Number:
+            <?php echo $order[0]['order_number']; ?>
+          </div>
+          <div class="col text-center">
+            Status:
+            <?php echo $order[0]['status']; ?>
+          </div>
+          <div class="col text-right">
+            Total price:
+            $<?php echo $order[0]['total_price']; ?>
+          </div>
+        </div>
+        <br>
+        <?php foreach ($items as $item): ?>
+        <hr>
+        <div class="row">
+          <div class="col">
+            Item:
+            <?php echo $item['name']; ?>
+          </div>
+          <div class="col text-center">
+            Quantity:
+            <?php echo $item['qt']; ?>
+          </div>
+          <div class="col text-right">
+            Price:
+            <?php echo $item['price']; ?>
+          </div>
+        </div>
         <?php endforeach; ?>
       </div>
     </div>
-  </main>
+  </div>
 </body>
 
 </html>

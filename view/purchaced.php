@@ -3,16 +3,16 @@
 
 <head>
   <title>Auto Parts Direct</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/products.css">
-  <script type="text/javascript" src="javascript/products.js"></script>
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/cart.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
 
@@ -29,15 +29,17 @@
           <a class="nav-link" href="?action=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="?action=products">Products</a>
+          <a class="nav-link" href="?action=products">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?action=account">My Account</a>
         </li>
+        <?php if ($_SESSION['is_valid'] == false): ?>
         <li class="nav-item">
           <a class="nav-link" href="?action=reg">Register</a>
         </li>
-        <li class="nav-item">
+        <?php endif; ?>
+        <li class="nav-item active">
           <a class="nav-link" href="index.php?action=cart"> Cart <i class="fas fa-shopping-cart"></i>
             <span class="label label-primary"></span>
             <?php echo $_SESSION['cartqt']; ?>
@@ -58,27 +60,26 @@
         </div>
       </form>
       <form class="form-inline my-2 my-lg-0" action="index.php">
-        <input type="hidden" name="action" value="logout">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
+        <?php if ($_SESSION['is_valid'] == true): ?>
+        <input type="hidden" name="action" value="logout" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+          Logout
+        </button>
+        <?php else: ?>
+        <input type="hidden" name="action" value="login" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+          Login
+        </button>
+        <?php endif; ?>
       </form>
     </div>
   </nav>
-  <main class="container">
-    <div class="card" id="crd">
-      <div class="list-group">
-        <?php foreach ($part_cat as $cat): ?>
-        <a href="?action=display&cat=<?php echo $cat[
-          'category'
-        ]; ?>&carid=<?php echo $carid[0][
-  'car_id'
-]; ?>" class="list-group-item list-group-item-action"><?php echo $cat[
-  'category'
-]; ?>
-        </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </main>
+  <div class="thank">
+    <h1>Thank you <?php echo $name['First_name'] .
+      " " .
+      $name['Last_name']; ?> for the purchase
+    </h1>
+  </div>
 </body>
 
 </html>

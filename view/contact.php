@@ -2,14 +2,13 @@
 <html>
 
 <head>
-  <title>Auto Parts Direct</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Part Direct</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/products.css">
-  <script type="text/javascript" src="javascript/products.js"></script>
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -29,7 +28,7 @@
           <a class="nav-link" href="?action=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="?action=products">Products</a>
+          <a class="nav-link" href="?action=products">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?action=account">My Account</a>
@@ -45,7 +44,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?action=contact">Contact Us</a>
+          <a class="nav-link active" href="?action=contact">Contact Us</a>
         </li>
       </ul>
       <form class="navbar-form" action="." method="get" role="search">
@@ -63,22 +62,15 @@
       </form>
     </div>
   </nav>
-  <main class="container">
-    <div class="card" id="crd">
-      <div class="list-group">
-        <?php foreach ($part_cat as $cat): ?>
-        <a href="?action=display&cat=<?php echo $cat[
-          'category'
-        ]; ?>&carid=<?php echo $carid[0][
-  'car_id'
-]; ?>" class="list-group-item list-group-item-action"><?php echo $cat[
-  'category'
-]; ?>
-        </a>
-        <?php endforeach; ?>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col text-ceneter">
+        <h1>Contact us at: 1-800-111-1111</h1>
       </div>
+      <div class="col"></div>
     </div>
-  </main>
+  </div>
 </body>
 
 </html>

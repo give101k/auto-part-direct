@@ -453,7 +453,6 @@ function insert_product($pnum, $brand, $name, $price, $stocknum, $desc, $imgurl)
 }
 function insert_to_car($carid, $pnum, $cat)
 {
-  //var_dump($carid);
   global $db;
   $query = 'INSERT INTO HAS_PARTS(category, cr_id, pt_num) 
             VALUES (:category, :cr_id, :pt_num)';

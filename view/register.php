@@ -64,7 +64,7 @@
   </nav>
   <div class="container-fluid">
     <div class="card reg">
-      <h1 class="text-center">Regster</h1>
+      <h1 class="text-center">Register</h1>
       <?php if ($message != null): ?>
       <div class="alert-danger alert top">
         <?php echo $message; ?>

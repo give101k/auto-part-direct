@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/New_York');
 session_start();
 require_once "model/database.php";
 require_once "model/login_func.php";
